@@ -11,13 +11,23 @@ var makers = require('./routes/makers');
 var app = express();
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/makerMix', function(err) {
+var config = require('./config/dbconfig.js')
+
+mongoose.connect(config.db.mongodb, function(err) {
   if(err) {
     console.log('connection error', err);
   } else {
     console.log('connection successful');
   }
 });
+
+// mongoose.connect('mongodb://localhost/makerMix', function(err) {
+//   if(err) {
+//     console.log('connection error', err);
+//   } else {
+//     console.log('connection successful');
+//   }
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

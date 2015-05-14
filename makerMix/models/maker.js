@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var MakerMixSchema = new mongoose.Schema({
-  name: String,
+  firstName: String,
   pair: Boolean,
   blacklist: Boolean,
   noOfCommits: Number,
